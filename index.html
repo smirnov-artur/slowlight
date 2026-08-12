@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SLOWLIGHT — the biography of one photon</title>
+<meta name="description" content="The sunlight touching you is eight minutes old — and a hundred thousand years in the making. An interactive essay drawn by one shader.">
+<meta property="og:title" content="SLOWLIGHT">
+<meta property="og:description" content="The hundred-thousand-year journey ending in your eye right now.">
+<meta property="og:image" content="og.jpg">
+<meta name="theme-color" content="#070604">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23070604'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23F5F0E6'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<!--
+  ═══════════════════════════════════════════════════════════════
+  SLOWLIGHT — the biography of one photon.
+  Drawn by one fragment shader. No photographs were taken;
+  the subject does not photograph well.
+
+  THE CROSSING — full waypoint table, 499 light-seconds:
+  00:00  PHOTOSPHERE, DEPARTURE
+  00:25  10 SOLAR RADII — THE CORONA THINS
+  01:00  0.12 AU
+  01:36  0.19 AU
+  02:12  0.27 AU
+  03:13  MERCURY ORBIT (0.39 AU)
+  03:50  0.46 AU
+  04:30  0.54 AU
+  05:10  0.62 AU
+  06:01  VENUS ORBIT (0.72 AU)
+  06:40  0.80 AU
+  07:20  0.88 AU
+  07:55  0.95 AU
+  08:18  LUNAR DISTANCE — ONE SECOND AWAY
+  08:19  EARTH, UPPER ATMOSPHERE
+  Press L at any time: lights out.
+  ═══════════════════════════════════════════════════════════════
+-->
+<noscript>
+  <div class="noscript-note">SLOWLIGHT is drawn live by a fragment shader and needs JavaScript. The story, in one line: the sunlight touching you is eight minutes old, but it spent a hundred thousand years escaping the sun. The full text below is yours to read.</div>
+</noscript>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<canvas id="gl" class="gl" aria-hidden="true"></canvas>
+<canvas id="fx" class="fx" aria-hidden="true"></canvas>
+
+<!-- preloader -->
+<div class="loader" id="loader" role="status" aria-label="Loading SLOWLIGHT">
+  <div class="loader-stage" aria-hidden="true">
+    <span class="nucleus n1" id="n1"></span>
+    <span class="nucleus n2" id="n2"></span>
+  </div>
+  <p class="loader-kelvin mono" id="loadK" aria-hidden="true">0 K</p>
+  <p class="loader-status mono" id="loadStatus" aria-hidden="true">IGNITING FRAGMENT SHADER</p>
+  <p class="loader-line mono" id="loadLine" aria-hidden="true"></p>
+</div>
+<div class="flash" id="flash" aria-hidden="true"></div>
+
+<!-- persistent chrome -->
+<div class="hud mono" aria-hidden="true">
+  <div class="hud-tr">
+    <p class="odo" id="odo"><span class="odo-prefix">T+</span><span class="odo-digits" id="odoDigits"></span><span class="odo-unit" id="odoUnit">YR</span></p>
+    <p class="hud-line" id="hudDepth">DEPTH 696,000 KM</p>
+    <p class="hud-line" id="hudTemp">15.7×10⁶ K</p>
+  </div>
+  <p class="hud-bl hud-line" id="hudClock"><span id="clockTime">00:00:00</span> — <span id="clockZone">LOCAL</span></p>
+  <p class="hud-br hud-line" id="hudSection">01 / THE CORE</p>
+</div>
+
+<nav class="rail" id="rail" aria-label="Chapters">
+  <div class="rail-line" aria-hidden="true"><i class="rail-dot" id="railDot"></i></div>
+  <a class="rail-tick mono" href="#c1"><i></i><span>01 — THE CORE</span></a>
+  <a class="rail-tick mono" href="#c2"><i></i><span>02 — THE WALK</span></a>
+  <a class="rail-tick mono" href="#c3"><i></i><span>03 — ESCAPE</span></a>
+  <a class="rail-tick mono" href="#c4"><i></i><span>04 — THE CROSSING</span></a>
+  <a class="rail-tick mono" href="#c5"><i></i><span>05 — THE SKY</span></a>
+  <a class="rail-tick mono" href="#c6"><i></i><span>06 — THE EYE</span></a>
+</nav>
+
+<main id="main">
+
+  <!-- ════════ 01 / THE CORE ════════ -->
+  <section class="chapter c1" id="c1">
+    <div class="c1-inner">
+      <p class="index mono" data-reveal>01 / THE CORE</p>
+      <div class="hero-head">
+        <h1 class="display display-core" data-split="lines">EIGHT MINUTES OLD.<br>A HUNDRED THOUSAND<br>YEARS IN THE MAKING.</h1>
+        <span class="annot mono nocase" data-reveal style="--d:600ms">γ · 26.7 MEV</span>
+      </div>
+      <p class="voice voice-intro" data-split="lines" style="--d:300ms">This is the story of the light that is hitting you right now.</p>
+      <div class="scrim block-core">
+        <p class="voice" data-split="lines">It begins as violence. In the core, two hundred and fifty billion atmospheres of pressure hold hydrogen close enough to fuse. Four nuclei become one helium, and the missing mass leaves as light: a gamma photon, furious and newborn, in the one place the sun keeps darkest. It knows nothing. It will spend the next hundred thousand years learning the way out.</p>
+        <ul class="stats mono nocase">
+          <li data-decode>PRESSURE: 2.5×10¹¹ ATM</li>
+          <li data-decode>FUSION: 4 ¹H → ⁴HE + γ</li>
+          <li data-decode>ENERGY: 26.7 MEV</li>
+        </ul>
+      </div>
+      <p class="cue mono" data-reveal>BEGIN THE WALK ↓</p>
+    </div>
+  </section>
+
+  <!-- ════════ 02 / THE WALK ════════ -->
+  <section class="chapter c2" id="c2">
+    <p class="index mono" data-reveal>02 / THE WALK</p>
+    <h2 class="display display-walk" data-split="lines">ONE CENTIMETER<br>AT A TIME</h2>
+    <div class="walk-block scrim">
+      <p class="voice" data-split="lines">In the radiative zone, a photon travels less than a centimeter before something takes it. Absorbed, re-emitted, absorbed again — a random walk counted in sextillions of collisions, each one erasing its sense of direction.</p>
+      <p class="annot mono" data-decode>MEAN FREE PATH ≈ 1 CM</p>
+    </div>
+    <p class="callout mono" data-reveal>COLLISION 10¹⁹</p>
+    <div class="walk-block scrim">
+      <p class="voice" data-split="lines">If you straightened its path, it would reach across the galaxy. What it actually gained was seven hundred thousand kilometers: one&nbsp;solar&nbsp;radius, covered at the speed of light, over roughly a hundred thousand years.</p>
+      <p class="annot mono" data-decode>COLLISIONS ~10²¹ · PATH IF STRAIGHTENED: A GALAXY WIDE</p>
+    </div>
+    <p class="callout mono" data-reveal>COLLISION 10²⁰</p>
+    <div class="walk-block scrim">
+      <p class="voice" data-split="lines">It is the most patient thing in the universe, and it does not know it is going anywhere.</p>
+    </div>
+    <p class="callout mono" data-reveal>COLLISION 10²¹ — ALMOST OUT</p>
+    <p class="voice voice-aside scrim" data-split="lines">You, dragging your cursor through the plasma, are one more thing it collides with.</p>
+  </section>
+
+  <!-- ════════ 03 / PHOTOSPHERE ════════ -->
+  <section class="chapter c3" id="c3">
+    <div class="c3-scrub">
+      <div class="stage">
+        <p class="index index-stage mono">03 / PHOTOSPHERE</p>
+        <h2 class="escape" id="escape">ESCAPE</h2>
+      </div>
+    </div>
+    <div class="c3-after">
+      <p class="voice voice-lone" data-split="lines">After a hundred thousand years, the rest of the trip takes eight minutes.</p>
+      <div class="stats-rule" data-reveal="line"></div>
+      <p class="stats mono" data-decode>SURFACE: 5,772 K · GRANULE Ø ≈ 1,000 KM · LAST SCATTERING: NOW</p>
+      <p class="stats mono" data-decode>ESCAPE VELOCITY: NOT REQUIRED. IT IS LIGHT.</p>
+    </div>
+  </section>
+
+  <!-- ════════ 04 / THE CROSSING ════════ -->
+  <section class="chapter c4" id="c4">
+    <p class="index mono" data-reveal>04 / THE CROSSING</p>
+    <h2 class="display display-crossing" data-split="lines">THE QUIET CROSSING</h2>
+    <ol class="waypoints" id="waypoints">
+      <li class="mono" data-reveal><span>00:00</span> — PHOTOSPHERE, DEPARTURE</li>
+      <li class="mono" data-reveal><span>03:13</span> — MERCURY ORBIT</li>
+    </ol>
+    <p class="cue-hold mono" data-reveal>HOLD ANYWHERE — SEE HOW FAR LIGHT GETS WHILE YOU WAIT</p>
+    <p class="voice voice-crossing" data-split="lines">Nothing touches it. For the first and only time in its life, it travels in a straight line.</p>
+    <ol class="waypoints waypoints-2" id="waypoints2">
+      <li class="mono" data-reveal><span>06:01</span> — VENUS ORBIT</li>
+      <li class="mono" data-reveal><span>08:18</span> — THE MOON, ONE SECOND AWAY</li>
+      <li class="mono" data-reveal><span>08:19</span> — EARTH, UPPER ATMOSPHERE</li>
+    </ol>
+    <p class="voice voice-crossing scrim" data-split="lines">The sun you see is always the sun as it was. You have never once seen it as it is.</p>
+    <p class="crossing-foot mono scrim" data-decode>DISTANCE: 1 AU = 149,597,870 KM · TRANSIT: 499 LIGHT-SECONDS</p>
+  </section>
+
+  <!-- ════════ 05 / THE SKY ════════ -->
+  <section class="chapter c5" id="c5">
+    <p class="index mono" data-reveal>05 / THE SKY</p>
+    <h2 class="display display-sky" data-split="lines">WHY THE SKY<br>IS BLUE</h2>
+    <p class="voice" data-split="lines">Eight minutes of nothing, then everything at once: the atmosphere. Air is nearly transparent — nearly. Blue light, at four hundred and fifty nanometers, scatters about six times more strongly than red at seven hundred. The sky is blue because it is full of sunlight that didn’t make it straight through. Every clear day is a story of ten thousand small collisions, retold above your head.</p>
+    <div class="spectrum-wrap" data-reveal>
+      <p class="spec-label mono nocase">DRAG ACROSS THE SPECTRUM — 380–700 NM · SCATTERING ∝ 1/λ⁴</p>
+      <div class="spectrum" id="spectrum" role="slider" tabindex="0" aria-label="Wavelength of light" aria-valuemin="380" aria-valuemax="700" aria-valuenow="450" aria-valuetext="450 nanometers">
+        <canvas id="specCanvas"></canvas>
+        <div class="spec-marker" id="specMarker"></div>
+      </div>
+      <p class="spec-out mono nocase" id="specOut">λ 450 NM — SCATTERS ×5.9 VS 700 NM</p>
+      <p class="spec-cite mono nocase">RAYLEIGH, 1871 · σ ∝ 1/λ⁴</p>
+    </div>
+    <p class="voice voice-closer scrim" data-split="lines">Our photon keeps its line. It was aimed, by accident, at you.</p>
+  </section>
+
+  <!-- ════════ 06 / THE EYE ════════ -->
+  <section class="chapter c6" id="c6">
+    <div class="c6-arrival scrim">
+      <p class="index mono" data-reveal>06 / THE EYE</p>
+      <h2 class="display display-arrival" data-split="lines">ARRIVAL</h2>
+      <p class="voice" data-split="lines">It ends in a molecule of rhodopsin, in a rod cell, in an eye. The cell fires. A hundred thousand years of stubbornness becomes one quiet electrical word: light. A single photon is enough.</p>
+    </div>
+    <div class="c6-converge" id="converge" aria-hidden="true"></div>
+    <div class="c6-reveal" id="reveal">
+      <h2 class="typed mono" id="typed" aria-label="Your screen is a small star."><span id="typedText"></span><i class="caret" aria-hidden="true"></i></h2>
+      <ul class="instruments mono">
+        <li id="litFor">YOU HAVE BEEN LIT FOR 00:00</li>
+        <li id="photons">PHOTONS RECEIVED FROM THIS PAGE (EST.): 0</li>
+        <li id="footClock">00:00:00 — LOCAL</li>
+      </ul>
+    </div>
+    <div class="c6-coda">
+      <p class="voice voice-final">Every photon this page has shown you finished its own journey in your eye.</p>
+      <footer class="colophon mono">
+        <p>SET IN ARCHIVO, INSTRUMENT SERIF &amp; JETBRAINS MONO · DRAWN BY ONE SHADER</p>
+        <p>NO PHOTOGRAPHS — THE SUBJECT DOES NOT PHOTOGRAPH WELL</p>
+        <p class="hint">PRESS L — LIGHTS OUT</p>
+        <button class="again mono" id="again">BEGIN AGAIN ↑</button>
+      </footer>
+    </div>
+  </section>
+
+</main>
+
+<canvas id="cursorCanvas" class="cursor-canvas" aria-hidden="true"></canvas>
+
+<div class="hold mono" id="hold" aria-hidden="true">
+  <p id="holdTime">YOU HELD FOR 0.00 S</p>
+  <p id="holdDist">LIGHT WENT 0 KM</p>
+  <p id="holdNote"></p>
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
