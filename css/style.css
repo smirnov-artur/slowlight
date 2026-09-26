@@ -214,6 +214,27 @@ a:hover, .again:hover, .rail-tick:hover span {
 @keyframes blink { 50% { opacity: 0.15; } }
 
 /* ============================================================
+   AUTHOR MARK
+   ============================================================ */
+.gad-mark {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 55;
+  display: inline-flex;
+  color: var(--hud-ink);
+  font-size: 20px;
+  transition: opacity 0.3s ease;
+}
+.js .gad-mark { opacity: 0; transition: opacity 1.2s ease 0.4s; }
+.js .loaded .gad-mark, .js.loaded .gad-mark { opacity: 0.7; }
+.gad-mark:hover { opacity: 1; }
+
+/* ============================================================
+   JOURNEY RAIL
+   ============================================================ */
+
+/* ============================================================
    JOURNEY RAIL
    ============================================================ */
 .rail {
@@ -611,6 +632,9 @@ body.holding { user-select: none; -webkit-user-select: none; }
   .chapter { padding-inline: max(7vw, 44px) 20px; }
   .c3 { padding-inline: 0; }
   .index-stage { left: max(7vw, 44px); }
+  /* the vignette's horizontal bleed (-14%) can push a full-width block past
+     the viewport edge on narrow screens; keep the vertical softness only */
+  .scrim::before { inset: -18% 0; }
 }
 
 @media (max-width: 600px) {

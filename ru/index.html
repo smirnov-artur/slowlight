@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<script src="/works/js/gad-loader.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SLOWLIGHT — биография одного фотона</title>
+<meta name="description" content="Солнечный свет, что касается вас, — восемь минут в пути и сто тысяч лет становления. Интерактивное эссе, нарисованное одним шейдером.">
+<meta property="og:title" content="SLOWLIGHT">
+<meta property="og:description" content="Путешествие в сто тысяч лет, которое заканчивается прямо в вашем глазу.">
+<meta property="og:image" content="../og.jpg">
+<meta name="theme-color" content="#070604">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23070604'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23F5F0E6'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../css/fonts.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/style.css">
+<style>.gad-logo{display:inline-block;height:1em;width:auto;overflow:visible;vertical-align:middle}.gad-logo .ring{animation:gad-draw 1.1s cubic-bezier(.65,0,.35,1) .35s forwards}.gad-logo .orb{opacity:0;transform-box:view-box;transform-origin:322px 30px;animation:gad-pop .3s ease 1.35s forwards,gad-orbit 7s linear 1.35s infinite}@keyframes gad-draw{to{stroke-dashoffset:0}}@keyframes gad-pop{to{opacity:1}}@keyframes gad-orbit{to{transform:rotate(360deg)}}@media (prefers-reduced-motion:reduce){.gad-logo .ring{animation:none;stroke-dashoffset:0}.gad-logo .orb{animation:none;opacity:1}}</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="gad-mark" href="https://smirnov-artur.github.io/works/" aria-label="g.a.d.">
+  <svg class="gad-logo" viewBox="0 0 355 110" role="img" aria-label="g.a.d."><path fill="currentColor" d="M53.7 66.8V57.9L54.3 55.8V43.7L53.7 41.7V27.6H70.8V66Q70.8 75.8 66.4 82.6Q61.9 89.5 54 93.1Q46.1 96.7 35.6 96.7Q28.3 96.7 22.2 94.8Q16.1 92.9 10.1 89.1V76Q15.7 80.3 21.9 82.2Q28.1 84 34.5 84Q43.8 84 48.7 79.9Q53.7 75.7 53.7 66.8ZM30.5 74.8Q23.2 74.8 17.4 71.8Q11.6 68.8 8.3 63.3Q4.9 57.8 4.9 50.5Q4.9 43.1 8.3 37.6Q11.6 32.2 17.4 29.1Q23.2 26.1 30.5 26.1Q36 26.1 40.6 27.8Q45.2 29.5 48.8 32.3Q52.4 35 54.9 38.3Q57.4 41.5 58.7 44.8Q60 48.1 60 50.7Q60 54.1 57.9 58.2Q55.9 62.4 52.1 66.2Q48.3 70 42.8 72.4Q37.4 74.8 30.5 74.8ZM36.2 63Q41.9 63 46.4 59.9Q50.9 56.9 54.3 50.5Q50.9 43.9 46.4 40.9Q41.8 37.9 36.2 37.9Q31.9 37.9 28.7 39.4Q25.6 41 23.9 43.8Q22.1 46.6 22.1 50.5Q22.1 54.2 23.8 57Q25.5 59.9 28.6 61.4Q31.8 63 36.2 63Z M84.7 80.9Q81.9 80.9 79.6 79.6Q77.4 78.3 76.1 76Q74.8 73.8 74.8 71.1Q74.8 68.3 76.1 66.1Q77.4 63.9 79.6 62.6Q81.9 61.2 84.7 61.2Q87.4 61.2 89.6 62.6Q91.8 63.9 93.2 66.1Q94.5 68.3 94.5 71.1Q94.5 73.8 93.2 76Q91.8 78.3 89.6 79.6Q87.4 80.9 84.7 80.9Z M146.4 80 144.1 61 146.6 53.8 144.1 46.7 146.4 27.6H164.2L161 53.8L164.2 80ZM150.7 53.8Q149.3 62.2 145.4 68.4Q141.6 74.6 135.7 78Q129.8 81.5 122.4 81.5Q114.7 81.5 108.9 78Q103 74.5 99.7 68.3Q96.4 62.1 96.4 53.8Q96.4 45.5 99.7 39.3Q103 33.1 108.9 29.6Q114.7 26.1 122.4 26.1Q129.8 26.1 135.7 29.5Q141.6 33 145.5 39.2Q149.4 45.3 150.7 53.8ZM113.7 53.8Q113.7 58 115.4 61.3Q117.2 64.5 120.3 66.4Q123.3 68.3 127.4 68.3Q131.4 68.3 135.1 66.4Q138.7 64.5 141.5 61.3Q144.2 58 145.6 53.8Q144.2 49.5 141.5 46.3Q138.7 43 135.1 41.1Q131.4 39.2 127.4 39.2Q123.3 39.2 120.3 41.1Q117.2 43 115.4 46.3Q113.7 49.5 113.7 53.8Z M176.9 80.9Q174.2 80.9 171.9 79.6Q169.7 78.3 168.4 76Q167.1 73.8 167.1 71.1Q167.1 68.3 168.4 66.1Q169.7 63.9 171.9 62.6Q174.2 61.2 176.9 61.2Q179.7 61.2 181.9 62.6Q184.1 63.9 185.4 66.1Q186.8 68.3 186.8 71.1Q186.8 73.8 185.4 76Q184.1 78.3 181.9 79.6Q179.7 80.9 176.9 80.9Z M239 80 236.7 60.2 239.8 54 236.8 46.1 241 9.2H258.8L253.5 52.5L256.7 80ZM242.9 53.8Q241.6 62.2 237.7 68.4Q233.8 74.6 228 78Q222.1 81.5 214.7 81.5Q207 81.5 201.1 78Q195.3 74.5 192 68.3Q188.7 62.1 188.7 53.8Q188.7 45.5 192 39.3Q195.3 33.1 201.1 29.6Q207 26.1 214.7 26.1Q222.1 26.1 228 29.5Q233.8 33 237.8 39.2Q241.7 45.3 242.9 53.8ZM206 53.8Q206 58 207.7 61.3Q209.5 64.5 212.5 66.4Q215.6 68.3 219.7 68.3Q223.7 68.3 227.4 66.4Q231 64.5 233.7 61.3Q236.5 58 237.9 53.8Q236.5 49.5 233.7 46.3Q231 43 227.4 41.1Q223.7 39.2 219.7 39.2Q215.6 39.2 212.5 41.1Q209.5 43 207.7 46.3Q206 49.5 206 53.8Z M269.4 80.9Q266.6 80.9 264.4 79.6Q262.1 78.3 260.8 76Q259.6 73.8 259.6 71.1Q259.6 68.3 260.8 66.1Q262.1 63.9 264.4 62.6Q266.6 61.2 269.4 61.2Q272.2 61.2 274.4 62.6Q276.6 63.9 277.9 66.1Q279.2 68.3 279.2 71.1Q279.2 73.8 277.9 76Q276.6 78.3 274.4 79.6Q272.2 80.9 269.4 80.9Z"/><circle class="ring" cx="322" cy="30" r="22" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" transform="rotate(-90 322 30)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/><circle class="orb" cx="322" cy="8" r="5" fill="currentColor"/></svg>
+</a>
+<!--
+  ═══════════════════════════════════════════════════════════════
+  SLOWLIGHT — биография одного фотона.
+  Нарисовано одним фрагментным шейдером. Фотографий нет;
+  герой плохо получается на камеру.
+  ═══════════════════════════════════════════════════════════════
+-->
+<noscript>
+  <div class="noscript-note">SLOWLIGHT рисуется в реальном времени фрагментным шейдером и нуждается в JavaScript. Вот эта история в одной строке: солнечный свет, что касается вас сейчас, — восемь минут в пути, но сто тысяч лет он выбирался из Солнца. Весь текст ниже можно прочитать и так.</div>
+</noscript>
+
+<a class="skip-link" href="#main">Перейти к содержимому</a>
+
+<canvas id="gl" class="gl" aria-hidden="true"></canvas>
+<canvas id="fx" class="fx" aria-hidden="true"></canvas>
+
+<!-- preloader -->
+<div class="loader" id="loader" role="status" aria-label="Загрузка SLOWLIGHT">
+  <div class="loader-stage" aria-hidden="true">
+    <span class="nucleus n1" id="n1"></span>
+    <span class="nucleus n2" id="n2"></span>
+  </div>
+  <p class="loader-kelvin mono" id="loadK" aria-hidden="true">0 K</p>
+  <p class="loader-status mono" id="loadStatus" aria-hidden="true">ЗАЖИГАЕМ ФРАГМЕНТНЫЙ ШЕЙДЕР</p>
+  <p class="loader-line mono" id="loadLine" aria-hidden="true"></p>
+</div>
+<div class="flash" id="flash" aria-hidden="true"></div>
+
+<!-- persistent chrome -->
+<div class="hud mono" aria-hidden="true">
+  <div class="hud-tr">
+    <p class="odo" id="odo"><span class="odo-prefix">T+</span><span class="odo-digits" id="odoDigits"></span><span class="odo-unit" id="odoUnit">ЛЕТ</span></p>
+    <p class="hud-line" id="hudDepth">ГЛУБИНА 696 000 KM</p>
+    <p class="hud-line" id="hudTemp">15,7×10⁶ K</p>
+  </div>
+  <p class="hud-bl hud-line" id="hudClock"><span id="clockTime">00:00:00</span> — <span id="clockZone">МЕСТНОЕ</span></p>
+  <p class="hud-br hud-line" id="hudSection">01 / ЯДРО</p>
+</div>
+
+<nav class="rail" id="rail" aria-label="Главы">
+  <div class="rail-line" aria-hidden="true"><i class="rail-dot" id="railDot"></i></div>
+  <a class="rail-tick mono" href="#c1"><i></i><span>01 — ЯДРО</span></a>
+  <a class="rail-tick mono" href="#c2"><i></i><span>02 — ПУТЬ</span></a>
+  <a class="rail-tick mono" href="#c3"><i></i><span>03 — ПОБЕГ</span></a>
+  <a class="rail-tick mono" href="#c4"><i></i><span>04 — ПЕРЕСЕЧЕНИЕ</span></a>
+  <a class="rail-tick mono" href="#c5"><i></i><span>05 — НЕБО</span></a>
+  <a class="rail-tick mono" href="#c6"><i></i><span>06 — ГЛАЗ</span></a>
+</nav>
+
+<main id="main">
+
+  <!-- ════════ 01 / ЯДРО ════════ -->
+  <section class="chapter c1" id="c1">
+    <div class="c1-inner">
+      <p class="index mono" data-reveal>01 / ЯДРО</p>
+      <div class="hero-head">
+        <h1 class="display display-core" data-split="lines">ВОЗРАСТ — ВОСЕМЬ МИНУТ.<br>СРОК ИЗГОТОВЛЕНИЯ —<br>СТО ТЫСЯЧ ЛЕТ.</h1>
+        <span class="annot mono nocase" data-reveal style="--d:600ms">γ · 26,7 МЭВ</span>
+      </div>
+      <p class="voice voice-intro" data-split="lines" style="--d:300ms">Это история света, который касается вас прямо сейчас.</p>
+      <div class="scrim block-core">
+        <p class="voice" data-split="lines">Начинается это с насилия. В ядре двести пятьдесят миллиардов атмосфер давления держат водород так тесно, что он вступает в синтез. Четыре ядра становятся одним гелием, а недостающая масса уходит светом: гамма-фотон, яростный и только что рождённый, в самом тёмном месте Солнца. Он ничего не знает. Следующие сто тысяч лет он будет учиться находить выход.</p>
+        <ul class="stats mono nocase">
+          <li data-decode>ДАВЛЕНИЕ: 2,5×10¹¹ АТМ</li>
+          <li data-decode>СИНТЕЗ: 4 ¹H → ⁴HE + γ</li>
+          <li data-decode>ЭНЕРГИЯ: 26,7 МЭВ</li>
+        </ul>
+      </div>
+      <p class="cue mono" data-reveal>НАЧАТЬ ПУТЬ ↓</p>
+    </div>
+  </section>
+
+  <!-- ════════ 02 / ПУТЬ ════════ -->
+  <section class="chapter c2" id="c2">
+    <p class="index mono" data-reveal>02 / ПУТЬ</p>
+    <h2 class="display display-walk" data-split="lines">ПО ОДНОМУ<br>САНТИМЕТРУ</h2>
+    <div class="walk-block scrim">
+      <p class="voice" data-split="lines">В лучистой зоне фотон пролетает меньше сантиметра, прежде чем его перехватят. Поглощение, переизлучение, снова поглощение — случайное блуждание, которое считают секстиллионами столкновений, и каждое стирает всякое чувство направления.</p>
+      <p class="annot mono" data-decode>СРЕДНИЙ СВОБОДНЫЙ ПРОБЕГ ≈ 1 СМ</p>
+    </div>
+    <p class="callout mono" data-reveal>СТОЛКНОВЕНИЕ 10¹⁹</p>
+    <div class="walk-block scrim">
+      <p class="voice" data-split="lines">Если распрямить его путь, он протянулся бы через всю галактику. А по факту он продвинулся всего на семьсот тысяч километров: один&nbsp;радиус&nbsp;Солнца, пройденный со скоростью света за какие-то сто тысяч лет.</p>
+      <p class="annot mono" data-decode>СТОЛКНОВЕНИЙ ~10²¹ · ПУТЬ, ЕСЛИ РАСПРЯМИТЬ: ШИРИНА ГАЛАКТИКИ</p>
+    </div>
+    <p class="callout mono" data-reveal>СТОЛКНОВЕНИЕ 10²⁰</p>
+    <div class="walk-block scrim">
+      <p class="voice" data-split="lines">Это самая терпеливая вещь во вселенной, и она даже не знает, что куда-то движется.</p>
+    </div>
+    <p class="callout mono" data-reveal>СТОЛКНОВЕНИЕ 10²¹ — ПОЧТИ СНАРУЖИ</p>
+    <p class="voice voice-aside scrim" data-split="lines">Вы, водя курсором по плазме, — ещё одно препятствие на его пути.</p>
+  </section>
+
+  <!-- ════════ 03 / ФОТОСФЕРА ════════ -->
+  <section class="chapter c3" id="c3">
+    <div class="c3-scrub">
+      <div class="stage">
+        <p class="index index-stage mono">03 / ФОТОСФЕРА</p>
+        <h2 class="escape" id="escape">ПОБЕГ</h2>
+      </div>
+    </div>
+    <div class="c3-after">
+      <p class="voice voice-lone" data-split="lines">После ста тысяч лет остаток пути занимает восемь минут.</p>
+      <div class="stats-rule" data-reveal="line"></div>
+      <p class="stats mono" data-decode>ПОВЕРХНОСТЬ: 5 772 K · Ø ГРАНУЛЫ ≈ 1 000 KM · ПОСЛЕДНЕЕ РАССЕЯНИЕ: СЕЙЧАС</p>
+      <p class="stats mono" data-decode>СКОРОСТЬ УБЕГАНИЯ: НЕ ТРЕБУЕТСЯ. ЭТО ЖЕ СВЕТ.</p>
+    </div>
+  </section>
+
+  <!-- ════════ 04 / ПЕРЕСЕЧЕНИЕ ════════ -->
+  <section class="chapter c4" id="c4">
+    <p class="index mono" data-reveal>04 / ПЕРЕСЕЧЕНИЕ</p>
+    <h2 class="display display-crossing" data-split="lines">ТИХОЕ ПЕРЕСЕЧЕНИЕ</h2>
+    <ol class="waypoints" id="waypoints">
+      <li class="mono" data-reveal><span>00:00</span> — ФОТОСФЕРА, ОТПРАВЛЕНИЕ</li>
+      <li class="mono" data-reveal><span>03:13</span> — ОРБИТА МЕРКУРИЯ</li>
+    </ol>
+    <p class="cue-hold mono" data-reveal>ЗАЖМИТЕ В ЛЮБОМ МЕСТЕ — ПОСМОТРИТЕ, КАК ДАЛЕКО УЙДЁТ СВЕТ, ПОКА ВЫ ЖДЁТЕ</p>
+    <p class="voice voice-crossing" data-split="lines">Его больше ничто не касается. В первый и единственный раз в своей жизни он летит по прямой.</p>
+    <ol class="waypoints waypoints-2" id="waypoints2">
+      <li class="mono" data-reveal><span>06:01</span> — ОРБИТА ВЕНЕРЫ</li>
+      <li class="mono" data-reveal><span>08:18</span> — ЛУНА, В ОДНОЙ СЕКУНДЕ</li>
+      <li class="mono" data-reveal><span>08:19</span> — ЗЕМЛЯ, ВЕРХНИЕ СЛОИ АТМОСФЕРЫ</li>
+    </ol>
+    <p class="voice voice-crossing scrim" data-split="lines">Солнце, которое вы видите, — это всегда Солнце таким, каким оно было. Таким, какое оно сейчас, вы не видели ни разу.</p>
+    <p class="crossing-foot mono scrim" data-decode>РАССТОЯНИЕ: 1 А.Е. = 149 597 870 KM · ПЕРЕЛЁТ: 499 СВЕТОВЫХ СЕКУНД</p>
+  </section>
+
+  <!-- ════════ 05 / НЕБО ════════ -->
+  <section class="chapter c5" id="c5">
+    <p class="index mono" data-reveal>05 / НЕБО</p>
+    <h2 class="display display-sky" data-split="lines">ПОЧЕМУ НЕБО<br>СИНЕЕ</h2>
+    <p class="voice" data-split="lines">Восемь минут ничего, а потом всё сразу: атмосфера. Воздух почти прозрачен — почти. Синий свет на длине волны четыреста пятьдесят нанометров рассеивается примерно в шесть раз сильнее, чем красный на семистах. Небо синее, потому что оно полно солнечного света, который не смог пройти напрямик. Каждый ясный день — это история из десяти тысяч мелких столкновений, которую пересказывают заново прямо у вас над головой.</p>
+    <div class="spectrum-wrap" data-reveal>
+      <p class="spec-label mono nocase">ПРОВЕДИТЕ ПО СПЕКТРУ — 380–700 НМ · РАССЕЯНИЕ ∝ 1/λ⁴</p>
+      <div class="spectrum" id="spectrum" role="slider" tabindex="0" aria-label="Длина волны света" aria-valuemin="380" aria-valuemax="700" aria-valuenow="450" aria-valuetext="450 нанометров">
+        <canvas id="specCanvas"></canvas>
+        <div class="spec-marker" id="specMarker"></div>
+      </div>
+      <p class="spec-out mono nocase" id="specOut">λ 450 НМ — РАССЕЯНИЕ ×5,9 К 700 НМ</p>
+      <p class="spec-cite mono nocase">РЭЛЕЙ, 1871 · σ ∝ 1/λ⁴</p>
+    </div>
+    <p class="voice voice-closer scrim" data-split="lines">Наш фотон держит курс. Он был случайно направлен именно в вас.</p>
+  </section>
+
+  <!-- ════════ 06 / ГЛАЗ ════════ -->
+  <section class="chapter c6" id="c6">
+    <div class="c6-arrival scrim">
+      <p class="index mono" data-reveal>06 / ГЛАЗ</p>
+      <h2 class="display display-arrival" data-split="lines">ПРИБЫТИЕ</h2>
+      <p class="voice" data-split="lines">Всё заканчивается в молекуле родопсина, в палочке сетчатки, в глазу. Клетка срабатывает. Сто тысяч лет упорства превращаются в одно тихое электрическое слово: свет. Достаточно одного фотона.</p>
+    </div>
+    <div class="c6-converge" id="converge" aria-hidden="true"></div>
+    <div class="c6-reveal" id="reveal">
+      <h2 class="typed mono" id="typed" aria-label="Ваш экран — маленькая звезда."><span id="typedText"></span><i class="caret" aria-hidden="true"></i></h2>
+      <ul class="instruments mono">
+        <li id="litFor">ВЫ ОСВЕЩЕНЫ УЖЕ 00:00</li>
+        <li id="photons">ФОТОНОВ ПОЛУЧЕНО ОТ ЭТОЙ СТРАНИЦЫ (ОЦЕНКА): 0</li>
+        <li id="footClock">00:00:00 — МЕСТНОЕ</li>
+      </ul>
+    </div>
+    <div class="c6-coda">
+      <p class="voice voice-final">Каждый фотон, что показала вам эта страница, закончил свой путь именно в вашем глазу.</p>
+      <footer class="colophon mono">
+        <p>НАБРАНО ШРИФТАМИ ARCHIVO, INSTRUMENT SERIF И JETBRAINS MONO · НАРИСОВАНО ОДНИМ ШЕЙДЕРОМ</p>
+        <p>БЕЗ ФОТОГРАФИЙ — ГЕРОЙ ПЛОХО ВЫХОДИТ НА СНИМКАХ</p>
+        <p class="hint">НАЖМИТЕ L — ГАСИТ СВЕТ</p>
+        <button class="again mono" id="again">НАЧАТЬ СНОВА ↑</button>
+      </footer>
+    </div>
+  </section>
+
+</main>
+
+<canvas id="cursorCanvas" class="cursor-canvas" aria-hidden="true"></canvas>
+
+<div class="hold mono" id="hold" aria-hidden="true">
+  <p id="holdTime">ВЫ ДЕРЖАЛИ 0,00 С</p>
+  <p id="holdDist">СВЕТ ПРОШЁЛ 0 KM</p>
+  <p id="holdNote"></p>
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
